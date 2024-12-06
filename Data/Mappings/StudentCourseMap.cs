@@ -11,7 +11,13 @@ public class StudentCourseMap : IEntityTypeConfiguration<StudentCourse>
     {
         builder.ToTable("StudentCourses");
 
-        builder.HasKey(sc => new { sc.StudentId, sc.CourseId });
+		builder.HasKey(sc => sc.Id);
+		builder.Property(sc => sc.Id)
+			.ValueGeneratedOnAdd()
+            .UseIdentityColumn();
+
+        builder.HasIndex(sc => new { sc.StudentId, sc.CourseId })
+			.IsUnique();
 
         // Many-to-Many: Student -> Course
         builder.HasOne(sc => sc.Student)
