@@ -20,13 +20,13 @@ public class StudyMaterialMap : IEntityTypeConfiguration<StudyMaterial>
             .IsRequired()
             .HasMaxLength(100)
             .HasColumnName("MaterialTitle")
-            .HasColumnType("VARCHAR(100)");
+            .HasColumnType("NVARCHAR(100)");
         
         builder.Property(x => x.Description)
             .IsRequired()
             .HasMaxLength(500)
             .HasColumnName("MaterialDescription")
-            .HasColumnType("VARCHAR(500)");
+            .HasColumnType("NVARCHAR(500)");
 
         builder.HasOne(sm => sm.Course)
             .WithMany(c => c.StudyMaterials)

@@ -21,7 +21,7 @@ public class CourseMap : IEntityTypeConfiguration<Course>
             .IsRequired()
             .HasMaxLength(100)
             .HasColumnName("CourseName")
-            .HasColumnType("VARCHAR(100)");
+            .HasColumnType("NVARCHAR(100)");
 
         // Many-to-Many: Course -> Student (StudentCourse)
         builder.HasMany(c => c.StudentCourses)

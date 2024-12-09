@@ -20,7 +20,7 @@ public class TeacherMap : IEntityTypeConfiguration<Teacher>
             .IsRequired()
             .HasMaxLength(100)
             .HasColumnName("TeacherName")
-            .HasColumnType("VARCHAR(100)");
+            .HasColumnType("NVARCHAR(100)");
 
         // One-to-Many: Teacher -> Courses
         builder.HasMany(t => t.Courses)

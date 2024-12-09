@@ -20,7 +20,7 @@ public class AcademicRecordMap : IEntityTypeConfiguration<AcademicRecord>
             .IsRequired()
             .HasMaxLength(50)
             .HasColumnName("EnrollmentNumber")
-            .HasColumnType("VARCHAR(50)");
+            .HasColumnType("NVARCHAR(50)");
 
         builder.Property(x => x.EnrollmentDate)
             .IsRequired()

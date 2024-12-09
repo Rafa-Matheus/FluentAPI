@@ -20,7 +20,7 @@ public class StudentMap : IEntityTypeConfiguration<Student>
             .IsRequired()
             .HasMaxLength(100)
             .HasColumnName("StudentName")
-            .HasColumnType("VARCHAR(100)");
+            .HasColumnType("NVARCHAR(100)");
         
         // One-to-One: Student -> AcademicRecord
         builder.HasOne(s => s.AcademicRecord)
